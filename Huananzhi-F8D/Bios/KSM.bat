@@ -1,0 +1,2 @@
+AFUDOS f8dKSM.BIN /P /B /N /X
+
