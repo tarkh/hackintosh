@@ -29,7 +29,7 @@
 Для начала зайдите в биос, сбросьте все настройки на дефолтные и сохранитесь с перезагрузкой, затем измените следующие параметры:
 
 * `Advanced > Trusted Computing > Security Device Support` **Disabled**
-* `Advanced > ACPI Settings > Enable ACPI Auto Configuration` **Disabled**
+* `Advanced > ACPI Settings > Enable ACPI Auto Configuration` **Enabled**
 * `Advanced > NCT5532D SSIO Configuration > Serial Port 1 Configuration > Serial Port` **Disabled**
 * `Advanced > Smart Fan function setting` надо настроить в зависимости от вашей системы охлаждения и процессоров. В моем случае в корпусе с вентиляторами на вдув и выдув и башнями A500 на обоих процессорах настройки выставлены следующим образом (тихо и температура в полной нагрузке не превышает 65 градусов):
   * `Smart Fan Temperature 1` **30**
