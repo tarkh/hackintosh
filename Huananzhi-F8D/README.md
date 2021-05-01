@@ -42,9 +42,9 @@
   * `Smart Fan PWM 3` **127**
   * `Smart Fan PWM 4` **255**
 * `Advanced > Serial Port Console Redirection > Console Redirection` **Disabled**
-* `Advanced > PCI Subsystem Settings > Above 4G Decoding` **Disabled**
+* `Advanced > PCI Subsystem Settings > Above 4G Decoding` **Enabled**
 * `Advanced > Network Stack Configuration > LAN Wake up Control` **Disabled**
-* `Advanced > CSM Configuration > CSM Support` **Disabled**. Чтобы отключить данную опцию, сначала необходимо перевести Video из режима `Legacy` в режим `UEFI`, сохранить настройки биос и перезагрузиться. Только после этого станет доступна возможность выставить `CSM Support` в положение **Disabled**.
+* `Advanced > CSM Configuration > CSM Support` **Disabled**. Чтобы отключить данную опцию, сначала необходимо перевести Video из режима `Legacy` в режим `UEFI`, сохранить настройки биос и перезагрузиться. Только после этого станет доступна возможность выставить `CSM Support` в положение **Disabled**. При этом в зависимости от видео-карты при выставлении параметра Video из режима `Legacy` в режим `UEFI` необходимо обязательно поставить параметр `Advanced > PCI Subsystem Settings > Above 4G Decoding` в позицию **Enabled**, иначе после перезагрузки может пропасть видео и биос придется сбрасывать путем извлечения батарейки.
 * `Advanced > USB Configuration > EHCI Hand-Off` **Enabled**
 * `IntelRCSetup > Processor Configuration > MSR Lock Control` **Disable**
 * `IntelRCSetup > Advanced Power Management Configuration > CPU C State Control > Package C State limit` **C2 state**
