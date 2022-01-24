@@ -1,4 +1,5 @@
 # Huananzhi F8D
+**([русская версия](https://github.com/tarkh/hackintosh/edit/main/Huananzhi-F8D/README-rus.md))**
 
 ## ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `Version for macOS 11 (Big Sur)`
 *This version should work with macOS operating systems starting from **10.14 (Mojave)** and ending with **macOS 11 (Big Sur)**, however, if you have problems running **macOS < version 11**, you can try an earlier build of the bootloader from the corresponding branch 'macOS 10.14 (Mojave)` in this repository.*
