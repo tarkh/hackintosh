@@ -13,7 +13,7 @@
 * [For Windows users](#windows)
 * [For Linux users](#linux)
 * [Removing the USB drive from the system](#removeusb)
-* [I'm pro, I don't want to read multi-letters](#impro)
+* [I'm pro, I don't want to read many letters](#impro)
 * [Epilogue](#end)
 
 <a name="intro"></a>
