@@ -36,7 +36,7 @@ To get started, go to the bios, reset all settings to default and save with a re
 * `Advanced > Trusted Computing > Security Device Support` **Disabled**
 * `Advanced > ACPI Settings > Enable ACPI Auto Configuration` **Enabled**
 * `Advanced > NCT5532D SSIO Configuration > Serial Port 1 Configuration > Serial Port` **Disabled**
-* `Advanced > Smart Fan function setting` should be configured depending on your cooling system and processors. In my case, with A500 towers on top of both processors, options are set as follows: (quiet and temperature at full load does not exceed 65 degrees):
+* `Advanced > Smart Fan function setting` should be configured depending on your cooling system and processors. In my case, with A500 towers on top of both processors, options are set as follows (quiet and temperature at full load does not exceed 65 degrees):
 * `Smart Fan Temperature 1` **30**
 * `Smart Fan Temperature 2` **42**
 * `Smart Fan Temperature 3` **55**
