@@ -1,5 +1,5 @@
 # Huananzhi F8D
-**([english version](https://github.com/tarkh/hackintosh/main/Huananzhi-F8D/README.md))**
+**([english version](https://github.com/tarkh/hackintosh/tree/main/Huananzhi-F8D))**
 
 ## ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `Версия для macOS 11 (Big Sur)`
 *Данная версия должна работать с операционными системами macOS начиная с **10.14 (Mojave)** и заканчивая **macOS 11 (Big Sur)**, тем не менее если у вас возникли проблемы с запуском **macOS < 11 версии**, то можете попробовать более раннюю сборку загрузчика из соответствующего бранча `macOS 10.14 (Mojave)` в данном репозитории.*
