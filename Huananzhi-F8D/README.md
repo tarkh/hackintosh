@@ -117,7 +117,7 @@ Flashrom will automatically dump bios into memory, clear the bios, flash a new o
 
 Despite the fact that the stock bios has a lock on the ME-regions, it is still possible to flash over the modified one using the `Afudos` program from a bootable USB drive. The bios will be flashed, but not completely, leaving the locked ME-regions. This method of flashing was also tested by me personally, the turbo boost unlock and the memory timings menu work. Nevertheless, **I highly recommend getting a programmer and flashing the modified bios correctly 1 time, all subsequent flashing can be done without a programmer, since everything will be unlocked**.
 
-#### Post-firmware
+#### Post-flashing
 
 After flashing the bios from this repository, there is no need to pull the battery out of the motherboard and reset the settings to default - everything is already configured for macOS to work correctly. When flashing of the firmware is complete, turn off the computer, wait 10 seconds and turn it back on. You can boot into macOS.
 
