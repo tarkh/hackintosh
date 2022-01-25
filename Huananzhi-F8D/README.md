@@ -130,7 +130,7 @@ All cores Turbo boost unlock and undervolting will be done by means of efi modul
 
 If you need simplicity and flexibility, keep reading. If you want to hardcore the settings as accurately as possible for your processors, squeezing every millivolt out of them, go to the repository of [Koshak1013](https://github.com/Koshak1013), there is a detailed description of the method for selecting limit values, assembling the driver and flashing thereof directly into the bios.
 
-So, in order to unlock and undervolt the processor, you need to load the efi driver responsible for this into the bios. As I wrote above, this repository contains drivers from `MOF`, since they personally showed the best result for me. In the `./mmof` directory you will find many files with different settings recorded in them, the values of which are displayed in the file names themselves. For example, in my case, the driver `v3x2_80-50-50_39_vcc1.8.efi` is already preinstalled in OpenCore by default, which means:
+So, in order to unlock and undervolt the processor, you need to load the efi driver responsible for this into the bios. As I wrote above, this repository contains drivers from `MOF`, since they personally showed the best result for me. In the `./mmof` directory you will find many files with different settings recorded in them, the values of which are displayed in the file names themselves. For example, lets look at preinstalled into OpenCore EFI driver `v3x2_80-50-50_39_vcc1.8.efi`, from it's name we can see:
 
 * -80mV core.
 * -50mV cache.
