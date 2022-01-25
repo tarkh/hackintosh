@@ -188,8 +188,8 @@ OK, then it's simple:
 
 * Flash bios from `./Bios`. **f8dKS.bin** - without the turbo-boost unlock, but with embedded settings for macOS (Linux and Windows also work). **f8dKSM.bin** - the same + microcode `6F 06F2` removed.
 * Format the flash drive in **fat32**, drop the `./EFI` directory into the root of USB stick.
-* In `EFI/OC/config.plist` register our generated serial numbers for **iMac15,1**. If macOS is not needed, you can skip it.
-* Put necessary efi module from `./mmof` into `EFI/OC/Drivers` and set corresponding file name in `EFI/OC/config.plist`, in the key `UEFI > Drivers`.
+* Alter `EFI/OC/config.plist` with your generated serial numbers for **iMac15,1**. If macOS is not needed, you can skip it.
+* Put necessary efi module from `./mmof` into `EFI/OC/Drivers` and set corresponding file name in `EFI/OC/config.plist`, in the key `UEFI > Drivers` and enable it.
 * Save, turn off, wait, turn on, boot from the flash drive - win-win.
 
 <a name="end"></a>
