@@ -115,7 +115,7 @@ Flashrom will automatically dump bios into memory, clear the bios, flash a new o
 
 #### Method 2
 
-Despite the fact that the stock bios has a lock on the ME-regions, it is still possible to flash over the modified one using the `Afudos` program from a bootable USB drive. The bios will be flashed, but not completely, leaving the locked ME-regions. The method of such a firmware was tested by me personally, the turbo boost unlock and the memory timings menu work. Nevertheless, **I highly recommend getting a programmer and flashing the modified bios correctly 1 time, all subsequent flashing can be done without a programmer, since everything will be unlocked**.
+Despite the fact that the stock bios has a lock on the ME-regions, it is still possible to flash over the modified one using the `Afudos` program from a bootable USB drive. The bios will be flashed, but not completely, leaving the locked ME-regions. This method of flashing was also tested by me personally, the turbo boost unlock and the memory timings menu work. Nevertheless, **I highly recommend getting a programmer and flashing the modified bios correctly 1 time, all subsequent flashing can be done without a programmer, since everything will be unlocked**.
 
 #### Post-firmware
 
