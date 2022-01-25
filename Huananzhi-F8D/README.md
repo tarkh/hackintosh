@@ -80,9 +80,9 @@ However, before launching, it is necessary to make some mandatory changes to the
 Save the configuration file, restart the computer, go to the BIOS and select boot from the UEFI partition of your flash drive. If everything was done correctly, you will see the OpenCore boot menu, where you can choose an internal drive with macOS already installed or the macOS installer in case of a fresh installation.
 
 <a name="wbios"></a>
-## BIOS firmware
+## BIOS flashing
 
-In the `./Bios` directory you will find 2 bios files and 2 corresponding bat scripts for firmware from `AFUDOS` from a special bootable flash drive. You can make such a drive using the `Rufus` program in Windows, having previously completely cleaned the drive and deleted all partitions. More detailed information can be found in `Google`.
+In the `./Bios` directory you will find 2 bios files and 2 corresponding bat scripts to run under `AFUDOS` from a special bootable flash drive. You can make such a drive using the `Rufus` program in Windows, having previously completely cleaned the drive and deleted all partitions. More detailed information can be found in `Google`.
 
 This method uses BIOS [HNX99F8D_200624_kot_v002](https://github.com/Koshak1013/HuananzhiX99_BIOS_mods/tree/master/Huananzhi%20X99-F8D/2020-06-24) from the wonderful repository of [Koshak1013](https://github.com/Koshak1013). This bios contains a number of fixes, microcode updates, BCLK 100.00MHz, access to memory timings settings and unlocked ME-regions so that you can later flash bioses without a programmer. **The guys are doing a great job, and the repository is constantly being updated with new bioses for various motherboards from China, so do not hesitate to go to their repository and make a donation!**
 
