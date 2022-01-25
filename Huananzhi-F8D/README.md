@@ -177,7 +177,7 @@ For Linux users everything is the same as [For Windows users](#windows).
 <a name="removeusb"></a>
 ## Removing the USB drive from the system
 
-After the perfect efi driver is found and you are **happy**, we are ready to get rid of a bootable USB flash drive in the USB connector of the computer. To do this, we need to mount the EFI partition of the internal disk and move the EFI directory from the root of our USB drive to its root. If we use macOS, it is advisable to mount the EFI partition on the same media where the OS is located. This is also true for any other operating systems. In the case of multi-OS boot, it is enough to place OpenCore on one of the disks and set it first in the queue for loading in the bios.
+After the perfect efi driver is found and you are **happy**, we are ready to get rid of a bootable USB flash drive in the USB connector of the computer. To do this, we need to mount the EFI partition of the internal disk and move the EFI directory from the root of our USB drive to its root. If we use macOS, it is advised to mount the EFI partition on the same media where the OS is located. This is also true for any other operating systems. In the case of multi-OS boot, it is enough to place OpenCore on one of the disks with OS and set it first in the queue for loading in the bios.
 
 You can find out how to mount EFI partitions in different operating systems in `Google`. Here is a good and pretty short guide for [macOS/Linux/Windows](https://noobsplanet.com/index.php?threads/how-to-mount-efi-partition-from-windows-linux-or-mac.56/).
 
