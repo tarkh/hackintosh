@@ -22,7 +22,7 @@
 This repository provides information on installing **macOS** on a system with the following technical characteristics:
 
 * Motherboard: Huananzhi F8D
-* Processor: 2x E5-2678V3
+* Processor: x2 E5-2678V3
 
 **OpenCore (0.7.6)** will be used as an EFI loader, therefore, before starting current process, it is highly recommended to familiarize yourself with this loader and its functionality [here (OpenCore Guide)](https://dortania.github.io/OpenCore-Install-Guide/). In addition to the basic OpenCore setup, a method for unlocking turbo mode on all processor cores and its undervolting will be described. **Windows** users can also use the OpenCore EFI loader to unlock turbo boost and undervolting, which will be discussed in a separate chapter [For Windows users](#windows).
 
