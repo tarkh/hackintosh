@@ -29,7 +29,7 @@ This repository provides information on installing **macOS** on a system with th
 <a name="biossetup"></a>
 ## BIOS Setup
 
-If you are not going to flash the BIOS, then you need to make certain changes to the settings of the stock bios. The bios for the firmware from this repository already contains the necessary default settings for the correct launch of macOS.
+If you are not going to flash the BIOS, then you need to make certain changes to the settings of the stock bios. The modified bios from this repository already contains all necessary default settings for the correct launch of macOS.
 
 To get started, go to the bios, reset all settings to default and save with a reboot, then change the following parameters:
 
