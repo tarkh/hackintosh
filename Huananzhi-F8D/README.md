@@ -142,8 +142,8 @@ The values may differ for your specific processors, since crystals in processors
 
 Installation of the necessary driver in the OpenCore EFI loader takes place in 2 steps:
 
-* The required efi module from the directory `./mmof` must be copied to the USB drive with OpenCore in `/EFI/OC/Drivers/`
-* Open the config `EFI/OC/config.plist` in a specialized `*.plist` editor and go to the key `UEFI > Drivers`, there find an entry with the parameter `path`: `v3x2_80-50-50_39_vcc1.8.efi` and change the value of the field `Enabled` from `false` to `true`.
+* The required efi module from the directory `./mmof` must be copied to the USB drive in `/EFI/OC/Drivers/`
+* Open the config `EFI/OC/config.plist` in a specialized `*.plist` editor and go to the key `UEFI > Drivers`, there find an entry with the parameter `path`: `v3x2_80-50-50_39_vcc1.8.efi`, change the name of efi file to the one you've copied and change value of the field `Enabled` from `false` to `true`.
 
 Save the config and **turn off** (do not restart) the computer. After 10 seconds, turn it back on and select booting from the UEFI partition of the USB drive in the bios.
 
