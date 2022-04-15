@@ -2,6 +2,9 @@
 **([русская версия](https://github.com/tarkh/hackintosh/blob/main/Huananzhi-F8D/README-rus.md))**
 
 ## ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `Version for macOS 12 (Monterey)`
+<p align="center">
+  <img src="./monterey.png">
+</p>
 *This version should work with macOS operating systems starting from **10.14 (Mojave)** and ending with **macOS 12 (Monterey)**, however, if you have problems running **macOS < version 12**, you can try an earlier build of the bootloader from the corresponding branch `macOS 10.14 (Mojave)` or `macOS 11 (Big Sur)` in this repository.*
 
 ##
