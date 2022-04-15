@@ -11,6 +11,7 @@
 * [Introductory Information](#intro)
 * [BIOS Setup](#biossetup)
 * [macOS Startup](#runmac)
+* [macOS Monterey and Nvidia Kepler](#montereyKepler)
 * [BIOS Firmware](#wbios)
 * [Unlock and undervolting](#unlock)
 * [For Windows users](#windows)
@@ -81,6 +82,10 @@ However, before launching, it is necessary to make some mandatory changes to the
 * If you follow these instructions in chronological order and have not yet flashed the BIOS to unlock turbo boost and undervolting, then make sure that the pre-installed efi module `v3x2_80-50-50_39_vcc1.8.efi` is deactivated. To do this, in `EFI/OC/config.plist` in `UEFI > Drivers`, find the entry with the `path` parameter: `v3x2_80-50-50_39_vcc1.8.efi` and make sure that the value of the `Enabled` field is `false`.
 
 Save the configuration file, restart the computer, go to the BIOS and select boot from the UEFI partition of your flash drive. If everything was done correctly, you will see the OpenCore boot menu, where you can choose an internal drive with macOS already installed or the macOS installer in case of a fresh installation.
+
+<a name="montereyKepler"></a>
+## macOS Monterey and Nvidia Kepler
+Starting from macOS Monterey Apple has removed drivers for Nvidia Kepler from the system. Never the less, there is ways to revert support for this video cards with [Geforce-Kepler-patcher V2](https://github.com/chris1111/Geforce-Kepler-patcher). Familiarize with it's manual and some limitation, that will occure while using this modification.
 
 <a name="wbios"></a>
 ## BIOS flashing
