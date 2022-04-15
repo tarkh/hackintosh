@@ -19,6 +19,7 @@
 * [For Linux users](#linux)
 * [Removing the USB drive from the system](#removeusb)
 * [I'm pro, I don't want to read many letters](#impro)
+* [Benchmarks in macOS](#benchmarks)
 * [Epilogue](#end)
 
 <a name="intro"></a>
@@ -202,6 +203,15 @@ OK, then it's simple:
 * Alter `EFI/OC/config.plist` with your generated serial numbers for **iMac17,1**. If macOS is not needed, you can skip it.
 * Put necessary efi module from `./mmof` into `EFI/OC/Drivers` and set corresponding file name in `EFI/OC/config.plist`, in the key `UEFI > Drivers` and enable it.
 * Save, turn off, wait, turn on, boot from the flash drive - win-win.
+
+<a name="benchmarks"></a>
+## Benchmarks in macOS
+
+<p align="center" width="100%">
+    <img width="80%" src="./benchmarks/cinebench.png">
+    <img width="43%" src="./benchmarks/geekbench4.png">
+    <img width="43%" src="./benchmarks/geekbench5.png">
+</p>
 
 <a name="end"></a>
 ## Epilogue
