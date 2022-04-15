@@ -7,7 +7,7 @@
 	<key># CREATED BY</key>
 	<string>tarkh</string>
 	<key># CREATED FOR</key>
-	<string>Huananzhi F8D (Big Sur)</string>
+	<string>Huananzhi F8D (Monterey)</string>
 	<key>ACPI</key>
 	<dict>
 		<key>Add</key>
@@ -439,9 +439,27 @@
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/VoodooTSCSync</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>x86_64</string>
+				<key>BundlePath</key>
+				<string>CpuTscSync.kext</string>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/CpuTscSync</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -748,6 +766,8 @@
 			<integer>0</integer>
 			<key>DisplayLevel</key>
 			<integer>2147483650</integer>
+			<key>LogModules</key>
+			<string>*</string>
 			<key>SerialInit</key>
 			<false/>
 			<key>SysReport</key>
@@ -764,7 +784,7 @@
 			<key>AllowSetDefault</key>
 			<true/>
 			<key>AllowToggleSip</key>
-			<false/>
+			<true/>
 			<key>ApECID</key>
 			<integer>0</integer>
 			<key>AuthRestart</key>
@@ -900,10 +920,10 @@
 				Rg==
 				</data>
 				<key>boot-args</key>
-				<string>npci=0x2000 keepsyms=1 alcid=1</string>
+				<string>npci=0x2000 keepsyms=1 alcid=1 -cputsdbg -cputsbeta</string>
 				<key>csr-active-config</key>
 				<data>
-				AAAAAA==
+				AAgAAA==
 				</data>
 				<key>prev-lang:kbd</key>
 				<string>en-US:0</string>
@@ -973,25 +993,25 @@
 			<key>AdviseFeatures</key>
 			<false/>
 			<key>MLB</key>
-			<string>C02421270J9G2Y78C</string>
+			<string>C02702403QXGPF7JC</string>
 			<key>MaxBIOSVersion</key>
 			<false/>
 			<key>ProcessorType</key>
 			<integer>0</integer>
 			<key>ROM</key>
 			<data>
-			aAknYu82
+			uI0SFFec
 			</data>
 			<key>SpoofVendor</key>
 			<true/>
 			<key>SystemMemoryStatus</key>
 			<string>Auto</string>
 			<key>SystemProductName</key>
-			<string>iMac15,1</string>
+			<string>iMac17,1</string>
 			<key>SystemSerialNumber</key>
-			<string>C02MR00SFY10</string>
+			<string>C02T30AZGG7L</string>
 			<key>SystemUUID</key>
-			<string>82F17893-7C05-4143-97DE-76A6B37FA912</string>
+			<string>E839181C-8589-4ED6-939F-821E5D603CD3</string>
 		</dict>
 		<key>UpdateDataHub</key>
 		<true/>
@@ -1033,6 +1053,12 @@
 			<integer>50</integer>
 			<key>KeySubsequentDelay</key>
 			<integer>5</integer>
+			<key>PointerPollMask</key>
+			<integer>-1</integer>
+			<key>PointerPollMax</key>
+			<integer>80</integer>
+			<key>PointerPollMin</key>
+			<integer>10</integer>
 			<key>PointerSpeedDiv</key>
 			<integer>1</integer>
 			<key>PointerSpeedMul</key>
@@ -1044,20 +1070,24 @@
 			<integer>0</integer>
 			<key>AudioDevice</key>
 			<string>PciRoot(0x0)/Pci(0x1b,0x0)</string>
-			<key>AudioOut</key>
+			<key>AudioOutMask</key>
 			<integer>1</integer>
 			<key>AudioSupport</key>
 			<true/>
-			<key>MinimumVolume</key>
-			<integer>20</integer>
+			<key>DisconnectHda</key>
+			<false/>
+			<key>MaximumGain</key>
+			<integer>-15</integer>
+			<key>MinimumAssistGain</key>
+			<integer>-30</integer>
+			<key>MinimumAudibleGain</key>
+			<integer>-55</integer>
 			<key>PlayChime</key>
 			<string>Auto</string>
 			<key>ResetTrafficClass</key>
 			<false/>
 			<key>SetupDelay</key>
 			<integer>0</integer>
-			<key>VolumeAmplifier</key>
-			<integer>143</integer>
 		</dict>
 		<key>ConnectDrivers</key>
 		<true/>

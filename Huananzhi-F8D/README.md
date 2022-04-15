@@ -1,8 +1,8 @@
 # Huananzhi F8D
 **([русская версия](https://github.com/tarkh/hackintosh/blob/main/Huananzhi-F8D/README-rus.md))**
 
-## ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `Version for macOS 11 (Big Sur)`
-*This version should work with macOS operating systems starting from **10.14 (Mojave)** and ending with **macOS 11 (Big Sur)**, however, if you have problems running **macOS < version 11**, you can try an earlier build of the bootloader from the corresponding branch `macOS 10.14 (Mojave)` in this repository.*
+## ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `Version for macOS 12 (Monterey)`
+*This version should work with macOS operating systems starting from **10.14 (Mojave)** and ending with **macOS 12 (Monterey)**, however, if you have problems running **macOS < version 12**, you can try an earlier build of the bootloader from the corresponding branch `macOS 10.14 (Mojave)` or `macOS 11 (Big Sur)` in this repository.*
 
 ##
 * [Introductory Information](#intro)
@@ -24,7 +24,7 @@ This repository provides information on installing **macOS** on a system with th
 * Motherboard: Huananzhi F8D
 * Processor: x2 E5-2678V3
 
-**OpenCore (0.7.6)** will be used as an EFI loader, therefore, before starting current process, it is highly recommended to familiarize yourself with this loader and its functionality [here (OpenCore Guide)](https://dortania.github.io/OpenCore-Install-Guide/). In addition to the basic OpenCore setup, a method for unlocking turbo mode on all processor cores and its undervolting will be described. **Windows** users can also use the OpenCore EFI loader to unlock turbo boost and undervolting, which will be discussed in a separate chapter [For Windows users](#windows).
+**OpenCore (0.7.9)** will be used as an EFI loader, therefore, before starting current process, it is highly recommended to familiarize yourself with this loader and its functionality [here (OpenCore Guide)](https://dortania.github.io/OpenCore-Install-Guide/). In addition to the basic OpenCore setup, a method for unlocking turbo mode on all processor cores and its undervolting will be described. **Windows** users can also use the OpenCore EFI loader to unlock turbo boost and undervolting, which will be discussed in a separate chapter [For Windows users](#windows).
 
 <a name="biossetup"></a>
 ## BIOS Setup
@@ -60,7 +60,7 @@ To get started, go to the bios, reset all settings to default and save with a re
 <a name="runmac"></a>
 ## Launching macOS
 
-To run macOS, we need the `./EFI` directory, which must be copied to the root of the USB drive, previously formatted it in **fat32**.
+To run macOS, we need the `./EFI` directory, which must be copied to the root of the USB drive, previously formatted it in **fat32**. Pay attention, that `./EFI` directory contains `production` version of bootloader. If you need `debug` version with `verbose` mode, please use `./EFI` from `EFI.debug.zip` archive attached.
 
 > If you don't have macOS installed earlier on the internal disk, then you need to create an installation flash drive according to [official OpenCore instructions](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/). When you write down the installation flash drive and get to [this point](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#setting-up-opencore-s-efi-environment), copy the `./EFI` directory from this repository to the root of the mounted EFI partition.
 
@@ -68,12 +68,12 @@ The EFI directory contains an OpenCore loader pre-configured for this particular
 
 However, before launching, it is necessary to make some mandatory changes to the EFI directory and `EFI/OC/config.plist`. To avoid unexpected errors, open files like `*.plist` in a specialized plist editor! So, what needs to be done:
 
-* Generate and add your own unique serial numbers for the model **iMac15,1**. You will need the [GenSMBIOS utility](https://github.com/corpnewt/GenSMBIOS). The received UUIDs and serial numbers need to be replaced in the file `EFI/OC/config.plist` in the following keys:
+* Generate and add your own unique serial numbers for the model **iMac17,1**. You will need the [GenSMBIOS utility](https://github.com/corpnewt/GenSMBIOS). The received UUIDs and serial numbers need to be replaced in the file `EFI/OC/config.plist` in the following keys:
 * `PlatformInfo > Generic > MLB` we set the generated value `Board Serial`.
-* `PlatformInfo > Generic > SystemSerialNumber` we set the generated value to `Serial`.
-* `PlatformInfo > Generic > SystemUUID` we set the generated value to `SmUUID`.
-* If your processor **differs** from E5 2678v3, you will need to reconfigure `VoodooTSCSync.kext` as it is configured for 48 threads. You can [use the configurator](https://www.insanelymac.com/forum/files/file/744-voodootscsync-configurator/), which will help generate the necessary file. Or you can try to correct the number of threads manually in the kext config `EFI/OC/Kexts/VoodooTSCSync.kext/Contents/Info.plist` in the key `IOKitPersonalities > VoodooTSCSync > IOPropertyMatch > IOCPUNumber` you need to put the total number of threads of your processors starting from 0. I.e. for two E5 2678v3 (12 x 2 x 2), the current value is 47.
-* Also, if the processors are different, later it will not be superfluous to reset `CPUFriendDataProvider.kext`, because it also made for a specific processor. Detailed information [available here](https://dortania.github.io/OpenCore-Post-Install/universal/pm.html#using-cpu-friend).
+* `PlatformInfo > Generic > SystemSerialNumber` we set the generated value `Serial`.
+* `PlatformInfo > Generic > SystemUUID` we set the generated value `SmUUID`.
+* `PlatformInfo > Generic > ROM` we set the generated value `Rom`.
+* If your processor **differs** from E5 2678v3, later on after macOS install it will not be superfluous to reset `CPUFriendDataProvider.kext`, because it made for a specific processor. Detailed information [available here](https://dortania.github.io/OpenCore-Post-Install/universal/pm.html#using-cpu-friend).
 * USB ports are configured for a specific motherboard model, the settings are in `EFI/OC/Kexts/USB-Map.kext/Contents/info.plist`. Since macOS limits the number of ports under 15 per 1 controller, I had to leave the front USB 3 port and 2 rear `lower` USB 3 ports only in USB 3 mode without USB 2 support. All other normal USB 2 ports work. Also, the 2 rear `upper` USB 3 operate in two USB 3/USB 2 modes. In addition, I have a discrete PCIe WiFi card with Bluetooth working in native mode. Bluetooth devices in macOS are defined as USB devices and occupy 1 port, but must be marked in a special way for correct operation. In the presented `USB-Map.kext`, such a port is registered relatively to my hardware setup. In your case, the Bluetooth port may be different or the Bluetooth device may not exist at all, so I recommend configuring the `USB-Map.kext/Contents/info.plist` specifically for your setup. Detailed instructions for configuring USB ports [can be found here](https://dortania.github.io/OpenCore-Post-Install/usb/system-preparation.html).
 * If you follow these instructions in chronological order and have not yet flashed the BIOS to unlock turbo boost and undervolting, then make sure that the pre-installed efi module `v3x2_80-50-50_39_vcc1.8.efi` is deactivated. To do this, in `EFI/OC/config.plist` in `UEFI > Drivers`, find the entry with the `path` parameter: `v3x2_80-50-50_39_vcc1.8.efi` and make sure that the value of the `Enabled` field is `false`.
 
@@ -143,7 +143,7 @@ The values may differ for your specific processors, since crystals in processors
 Installation of the necessary driver in the OpenCore EFI loader takes place in 2 steps:
 
 * The required efi module from the directory `./mmof` must be copied to the USB drive in `/EFI/OC/Drivers/`
-* Open the config `EFI/OC/config.plist` in a specialized `*.plist` editor and go to the key `UEFI > Drivers`, there find an entry with the parameter `path`: `v3x2_80-50-50_39_vcc1.8.efi`, change the name of efi file to the one you've copied and change value of the field `Enabled` from `false` to `true`.
+* Open the config `EFI/OC/config.plist` in a specialized `*.plist` editor and go to the key `UEFI > Drivers`, there find an entry with the parameter `path`: `v3x2_80-50-50_39_vcc1.8.efi`, change the name of efi file to the one you've copied a5nd change value of the field `Enabled` from `false` to `true`.
 
 Save the config and **turn off** (do not restart) the computer. After 10 seconds, turn it back on and select booting from the UEFI partition of the USB drive in the bios.
 
@@ -188,7 +188,7 @@ OK, then it's simple:
 
 * Flash bios from `./Bios`. **f8dKS.bin** - without the turbo-boost unlock, but with embedded settings for macOS (Linux and Windows also work). **f8dKSM.bin** - the same + microcode `6F 06F2` removed.
 * Format the flash drive in **fat32**, drop the `./EFI` directory into the root of USB stick.
-* Alter `EFI/OC/config.plist` with your generated serial numbers for **iMac15,1**. If macOS is not needed, you can skip it.
+* Alter `EFI/OC/config.plist` with your generated serial numbers for **iMac17,1**. If macOS is not needed, you can skip it.
 * Put necessary efi module from `./mmof` into `EFI/OC/Drivers` and set corresponding file name in `EFI/OC/config.plist`, in the key `UEFI > Drivers` and enable it.
 * Save, turn off, wait, turn on, boot from the flash drive - win-win.
 
