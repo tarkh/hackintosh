@@ -19,6 +19,7 @@
 * [Для пользователей Linux](#linux)
 * [Убираем из системы USB-накопитель](#removeusb)
 * [Я pro, не хочу читать многабукв](#impro)
+* [Бенчмарки в macOS](#benchmarks)
 * [Эпилог](#end)
 
 <a name="intro"></a>
@@ -202,6 +203,15 @@ Done!
 * В `EFI/OC/config.plist` прописываем свои сгенерированные серийники для **iMac17,1**. Если macOS не нужен, можно пропустить.
 * Закидываем нужный efi-модуль из `./mmof` в `EFI/OC/Drivers` и правим имя файла в `EFI/OC/config.plist`, в ключе `UEFI > Drivers`.
 * Сохраняем, выключаем, ждем, включаем, бутимся с флешки - win-win.
+
+<a name="benchmarks"></a>
+## Бенчмарки в macOS
+
+<p align="center" width="100%">
+    <img width="80%" src="./benchmarks/cinebench.png">
+    <img width="43%" src="./benchmarks/geekbench4.png">
+    <img width="43%" src="./benchmarks/geekbench5.png">
+</p>
 
 <a name="end"></a>
 ## Эпилог
