@@ -1,7 +1,7 @@
 # Huananzhi F8D
 **([english version](https://github.com/tarkh/hackintosh/tree/main/Huananzhi-F8D))**
 
-## ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `Версия для macOS 12 (Monterey)`
+## <img src="https://via.placeholder.com/12/f03c15/f03c15.png"> `Версия для macOS 12 (Monterey)`
 <p align="center">
   <img src="./monterey.png">
 </p>
