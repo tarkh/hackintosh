@@ -30,7 +30,7 @@ This repository provides information on installing **macOS** on a system with th
 * Motherboard: Huananzhi F8D
 * Processor: x2 E5-2678V3
 
-**OpenCore (0.7.9)** will be used as an EFI loader, therefore, before starting current process, it is highly recommended to familiarize yourself with this loader and its functionality [here (OpenCore Guide)](https://dortania.github.io/OpenCore-Install-Guide/). In addition to the basic OpenCore setup, a method for unlocking turbo mode on all processor cores and its undervolting will be described. **Windows** users can also use the OpenCore EFI loader to unlock turbo boost and undervolting, which will be discussed in a separate chapter [For Windows users](#windows).
+**OpenCore (0.8.3)** will be used as an EFI loader, therefore, before starting current process, it is highly recommended to familiarize yourself with this loader and its functionality [here (OpenCore Guide)](https://dortania.github.io/OpenCore-Install-Guide/). In addition to the basic OpenCore setup, a method for unlocking turbo mode on all processor cores and its undervolting will be described. **Windows** users can also use the OpenCore EFI loader to unlock turbo boost and undervolting, which will be discussed in a separate chapter [For Windows users](#windows).
 
 **System memory setup hint**: this motherboard supports **8 channel** DDR4 RAM (x2 CPUs with 4 channel each), so if you utilize all 8 memory slots, this will give you performance boost **up to 15%** comparing to only 4 utilized slots (2 for each CPU).
 

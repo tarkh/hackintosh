@@ -453,6 +453,24 @@
 				<key>Arch</key>
 				<string>x86_64</string>
 				<key>BundlePath</key>
+				<string>CPUFriend.kext</string>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/CPUFriend</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>x86_64</string>
+				<key>BundlePath</key>
 				<string>CPUFriendDataProvider.kext</string>
 				<key>Comment</key>
 				<string></string>
@@ -658,6 +676,8 @@
 			<true/>
 			<key>AppleXcpmForceBoost</key>
 			<true/>
+			<key>CustomPciSerialDevice</key>
+			<false/>
 			<key>CustomSMBIOSGuid</key>
 			<false/>
 			<key>DisableIoMapper</key>
@@ -669,6 +689,8 @@
 			<key>ExtendBTFeatureFlags</key>
 			<false/>
 			<key>ExternalDiskIcons</key>
+			<false/>
+			<key>ForceAquantiaEthernet</key>
 			<false/>
 			<key>ForceSecureBootScheme</key>
 			<false/>
@@ -761,11 +783,7 @@
 		<array/>
 		<key>Security</key>
 		<dict>
-			<key>AllowNvramReset</key>
-			<true/>
 			<key>AllowSetDefault</key>
-			<true/>
-			<key>AllowToggleSip</key>
 			<true/>
 			<key>ApECID</key>
 			<integer>0</integer>
@@ -793,6 +811,13 @@
 			<string>Disabled</string>
 			<key>Vault</key>
 			<string>Optional</string>
+		</dict>
+		<key>Serial</key>
+		<dict>
+			<key>Init</key>
+			<false/>
+			<key>Override</key>
+			<false/>
 		</dict>
 		<key>Tools</key>
 		<array>
@@ -895,6 +920,8 @@
 			</dict>
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
+				<key>#INFO (prev-lang:kbd)</key>
+				<string>en:252 (ABC), set 656e3a323532</string>
 				<key>ForceDisplayRotationInEFI</key>
 				<integer>0</integer>
 				<key>SystemAudioVolume</key>
@@ -929,8 +956,6 @@
 				<string>ForceDisplayRotationInEFI</string>
 			</array>
 		</dict>
-		<key>LegacyEnable</key>
-		<false/>
 		<key>LegacyOverwrite</key>
 		<false/>
 		<key>LegacySchema</key>
@@ -975,14 +1000,14 @@
 			<key>AdviseFeatures</key>
 			<false/>
 			<key>MLB</key>
-			<string>C02702403QXGPF7JC</string>
+			<string>C02651301QXGPF78C</string>
 			<key>MaxBIOSVersion</key>
 			<false/>
 			<key>ProcessorType</key>
 			<integer>0</integer>
 			<key>ROM</key>
 			<data>
-			uI0SFFec
+			9PFaw330
 			</data>
 			<key>SpoofVendor</key>
 			<true/>
@@ -991,9 +1016,9 @@
 			<key>SystemProductName</key>
 			<string>iMac17,1</string>
 			<key>SystemSerialNumber</key>
-			<string>C02T30AZGG7L</string>
+			<string>C02SV02VGG7L</string>
 			<key>SystemUUID</key>
-			<string>E839181C-8589-4ED6-939F-821E5D603CD3</string>
+			<string>8C874876-8E4D-45A9-82FA-C0265B95E3FD</string>
 		</dict>
 		<key>UpdateDataHub</key>
 		<true/>
@@ -1082,6 +1107,8 @@
 				<string>HFS+ Driver</string>
 				<key>Enabled</key>
 				<true/>
+				<key>LoadEarly</key>
+				<false/>
 				<key>Path</key>
 				<string>OpenHfsPlus.efi</string>
 			</dict>
@@ -1092,6 +1119,8 @@
 				<string></string>
 				<key>Enabled</key>
 				<true/>
+				<key>LoadEarly</key>
+				<false/>
 				<key>Path</key>
 				<string>OpenRuntime.efi</string>
 			</dict>
@@ -1102,6 +1131,8 @@
 				<string></string>
 				<key>Enabled</key>
 				<true/>
+				<key>LoadEarly</key>
+				<false/>
 				<key>Path</key>
 				<string>OpenCanopy.efi</string>
 			</dict>
@@ -1112,6 +1143,8 @@
 				<string></string>
 				<key>Enabled</key>
 				<true/>
+				<key>LoadEarly</key>
+				<false/>
 				<key>Path</key>
 				<string>AudioDxe.efi</string>
 			</dict>
@@ -1122,6 +1155,8 @@
 				<string></string>
 				<key>Enabled</key>
 				<true/>
+				<key>LoadEarly</key>
+				<false/>
 				<key>Path</key>
 				<string>OpenLinuxBoot.efi</string>
 			</dict>
@@ -1131,6 +1166,8 @@
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
+				<false/>
+				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
 				<string>v3x2_80-50-50_39_vcc1.8.efi</string>
