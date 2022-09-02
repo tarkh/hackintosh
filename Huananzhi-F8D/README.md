@@ -15,6 +15,7 @@
 * [macOS Monterey and Nvidia Kepler](#montereyKepler)
 * [BIOS Firmware](#wbios)
 * [Unlock and undervolting](#unlock)
+* [Prebuilt bios with settings, unlock and undervolting](#biosUnlockUndervoltedPrebuilt).
 * [For Windows users](#windows)
 * [For Linux users](#linux)
 * [Removing the USB drive from the system](#removeusb)
@@ -140,7 +141,7 @@ All cores Turbo boost unlock and undervolting will be done by means of efi modul
 * An EFI bootloader is required (in our case, this is not a downside, since we use OpenCore anyway).
 * Efi modules contain an average grid of values for undervolting, completely custom values can be set only by assembling your Efi module, or by flashing parameters directly into the bios.
 
-If you need simplicity and flexibility, keep reading. If you want to hardcore the settings as accurately as possible for your processors, squeezing every millivolt out of them, go to the repository of [Koshak1013](https://github.com/Koshak1013), there is a detailed description of the method for selecting limit values, assembling the driver and flashing thereof directly into the bios.
+If you need simplicity and flexibility, keep reading. If you want to hardcore the settings as accurately as possible for your processors, squeezing every millivolt out of them, go to the repository of [Koshak1013](https://github.com/Koshak1013/HuananzhiX99_BIOS_mods#Instructions-for-unlocking-the-maximum-frequency-for-all-cores-not-two-unlock), there is a detailed description of the method for selecting limit values, assembling the driver and flashing thereof directly into the bios. Also you can test [prebuilt bios with settings, unlock and undervolting](#biosUnlockUndervoltedPrebuilt).
 
 So, in order to unlock and undervolt the processor, you need to load the efi driver responsible for this into the bios. As I wrote above, this repository contains drivers from `MOF`, since they personally showed the best result for me. In the `./mmof` directory you will find many files with different settings recorded in them, the values of which are displayed in the file names themselves. For example, lets look at preinstalled into OpenCore EFI driver `v3x2_80-50-50_39_vcc1.8.efi`, from it's name we can see:
 
@@ -169,6 +170,18 @@ Done!
 ```
 
 This will mean that our efi module has been successfully loaded. Next, your task is to properly test the operation of the processor in different types of loads. Read more about this in the repository of [Koshak1013](https://github.com/Koshak1013).
+
+<a name="biosUnlockUndervoltedPrebuilt"></a>
+## Prebuilt bios with settings, unlock and undervolting
+
+There is a prebuilt bios with all settings, turbo unlock, undervolting and other things already flashed inside. You can find it in `./Bios` directory under the name `f8dKSM708050V1700FTU2929.bin`. It has upper-medium settings:
+
+* -70mV core.
+* -80mV cache.
+* -50mV system agent.
+* 1.7V vccin.
+* Powercut + ucode39.
+* Uncore 2929.
 
 <a name="windows"></a>
 ## For Windows users
