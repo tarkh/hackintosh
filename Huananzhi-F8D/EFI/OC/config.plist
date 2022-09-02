@@ -1000,14 +1000,14 @@
 			<key>AdviseFeatures</key>
 			<false/>
 			<key>MLB</key>
-			<string>C02651301QXGPF78C</string>
+			<string>C02526100J9GPF78C</string>
 			<key>MaxBIOSVersion</key>
 			<false/>
 			<key>ProcessorType</key>
 			<integer>0</integer>
 			<key>ROM</key>
 			<data>
-			9PFaw330
+			GGWQFuKd
 			</data>
 			<key>SpoofVendor</key>
 			<true/>
@@ -1016,9 +1016,9 @@
 			<key>SystemProductName</key>
 			<string>iMac17,1</string>
 			<key>SystemSerialNumber</key>
-			<string>C02SV02VGG7L</string>
+			<string>C02PXGYZGG7L</string>
 			<key>SystemUUID</key>
-			<string>8C874876-8E4D-45A9-82FA-C0265B95E3FD</string>
+			<string>690FCAE7-3C41-4060-A134-533AECFF1DA2</string>
 		</dict>
 		<key>UpdateDataHub</key>
 		<true/>
