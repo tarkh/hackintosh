@@ -221,6 +221,7 @@ Done!
 ## Бенчмарки в macOS
 
 <p align="center" width="100%">
+    <img width="80%" src="./benchmarks/xcode.png">
     <img width="80%" src="./benchmarks/cinebench.png">
     <img width="43%" src="./benchmarks/geekbench4.png">
     <img width="43%" src="./benchmarks/geekbench5.png">
