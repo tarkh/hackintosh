@@ -221,6 +221,8 @@ OK, then it's simple:
 ## Benchmarks in macOS
 
 <p align="center" width="100%">
+Xcode benchmark, compare to Mac results:<br>
+https://github.com/devMEremenko/XcodeBenchmark#xcode-130-or-above
     <img width="80%" src="./benchmarks/xcode.png">
     <img width="80%" src="./benchmarks/cinebench.png">
     <img width="43%" src="./benchmarks/geekbench4.png">
