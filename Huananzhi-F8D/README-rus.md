@@ -220,14 +220,30 @@ Done!
 <a name="benchmarks"></a>
 ## Бенчмарки в macOS
 
-<p align="center" width="100%">
-Xcode бенчмарк, сравнить с результатами Mac:<br>
-https://github.com/devMEremenko/XcodeBenchmark#xcode-130-or-above
-    <img width="60%" src="./benchmarks/xcode.png">
-    <img width="80%" src="./benchmarks/cinebench.png">
-    <img width="43%" src="./benchmarks/geekbench4.png">
-    <img width="43%" src="./benchmarks/geekbench5.png">
-</p>
+<table width="100%">
+  <tr>
+    <td align="center" valign="top" colspan="2">
+      XcodeBenchmark (<a href="https://github.com/devMEremenko/XcodeBenchmark#xcode-130-or-above">сравнить с результатами Mac</a>)<br>
+      <img width="70%" src="./benchmarks/xcode.png">
+    </td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" colspan="2">
+      Cinebench R23<br>
+      <img width="80%" src="./benchmarks/cinebench.png">
+    </td>
+  </tr>
+  <tr>
+    <td align="center" valign="top">
+      Geekbench 4<br>
+      <img width="86%" src="./benchmarks/geekbench4.png">
+    </td>
+    <td align="center" valign="top">
+      Geekbench 5<br>
+      <img width="86%" src="./benchmarks/geekbench5.png">
+    </td>
+  </tr>
+</table>
 
 <a name="end"></a>
 ## Эпилог
