@@ -90,7 +90,7 @@ Save the configuration file, restart the computer, go to the BIOS and select boo
 
 <a name="montereyKepler"></a>
 ## macOS Monterey and Nvidia Kepler
-Starting from macOS Monterey Apple has removed drivers for Nvidia Kepler from the system. Never the less, there is ways to revert support for this video cards with [Geforce-Kepler-patcher V2](https://github.com/chris1111/Geforce-Kepler-patcher). Familiarize with it's manual and some limitation, that will occure while using this modification.
+Starting from macOS Monterey Apple has removed drivers for Nvidia Kepler from the system. Never the less, there is ways to revert support for this video cards with [Geforce-Kepler-patcher](https://github.com/chris1111/Geforce-Kepler-patcher). Familiarize with it's manual and some limitation, that will occure while using this modification.
 
 <a name="wbios"></a>
 ## BIOS flashing
