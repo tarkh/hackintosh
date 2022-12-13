@@ -90,7 +90,7 @@
 
 <a name="montereyKepler"></a>
 ## macOS Monterey и Nvidia Kepler
-Начиная с macOS Monterey Apple удалила драйверы для видеокарт Nvidia Kepler из системы. Тем не менее, есть возможность вернуть поддержку данных видеокарт используя [Geforce-Kepler-patcher V2](https://github.com/chris1111/Geforce-Kepler-patcher). Ознакомьтесь с инструкцией по установке и некоторыми ограничениями, которые накладывает данная модификация.
+Начиная с macOS Monterey Apple удалила драйверы для видеокарт Nvidia Kepler из системы. Тем не менее, есть возможность вернуть поддержку данных видеокарт используя [Geforce-Kepler-patcher](https://github.com/chris1111/Geforce-Kepler-patcher). Ознакомьтесь с инструкцией по установке и некоторыми ограничениями, которые накладывает данная модификация.
 
 <a name="wbios"></a>
 ## Прошивка BIOS
