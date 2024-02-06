@@ -1,25 +1,26 @@
 # Huananzhi F8D
 **([русская версия](https://github.com/tarkh/hackintosh/blob/main/Huananzhi-F8D/README-rus.md))**
 
-## <img src="https://via.placeholder.com/12/f03c15/f03c15.png"> `Version for macOS 12 (Monterey)`
+## <img src="https://via.placeholder.com/12/f03c15/f03c15.png"> `Version for macOS 14 (Sonoma)`
 <p align="center">
-  <img src="./monterey.png">
+  <img src="./benchmarks/aboutxl.webp">
 </p>
 
-*This version should work with macOS operating systems starting from **10.14 (Mojave)** and ending with **macOS 12 (Monterey)**, however, if you have problems running **macOS < version 12**, you can try an earlier build of the bootloader from the corresponding branch `macOS 10.14 (Mojave)` or `macOS 11 (Big Sur)` in this repository.*
+*This version should work with macOS operating systems starting from **10.14 (Mojave)** and ending with **macOS 14 (Sonoma)**, however, if you have problems running **macOS < version 14**, you can try an earlier build from the corresponding branch `macOS 10.14 (Mojave)`, `macOS 11 (Big Sur)` or `macOS 12 (Monterey)` in this repository.*
 
 ##
 * [Introductory Information](#intro)
-* [BIOS Setup](#biossetup)
-* [macOS Startup](#runmac)
-* [macOS Monterey and Nvidia Kepler](#montereyKepler)
+* [BIOS Setup](#biosSetup)
+* [macOS Startup](#runMac)
+* [Nvidia Kepler](#nvidiaKepler)
+* [AMD Navi](#amdNavi)
 * [BIOS Firmware](#wbios)
 * [Unlock and undervolting](#unlock)
 * [Prebuilt bios with settings, unlock and undervolting](#biosUnlockUndervoltedPrebuilt).
 * [For Windows users](#windows)
 * [For Linux users](#linux)
-* [Removing the USB drive from the system](#removeusb)
-* [I'm pro, I don't want to read many letters](#impro)
+* [Removing the USB drive from the system](#removeUsb)
+* [I'm pro, I don't want to read many letters](#imPro)
 * [Benchmarks in macOS](#benchmarks)
 * [Epilogue](#end)
 
@@ -31,11 +32,11 @@ This repository provides information on installing **macOS** on a system with th
 * Motherboard: Huananzhi F8D
 * Processor: x2 E5-2678V3
 
-**OpenCore (0.8.3)** will be used as an EFI loader, therefore, before starting current process, it is highly recommended to familiarize yourself with this loader and its functionality [here (OpenCore Guide)](https://dortania.github.io/OpenCore-Install-Guide/). In addition to the basic OpenCore setup, a method for unlocking turbo mode on all processor cores and its undervolting will be described. **Windows** users can also use the OpenCore EFI loader to unlock turbo boost and undervolting, which will be discussed in a separate chapter [For Windows users](#windows).
+**OpenCore (0.9.7)** will be used as an EFI loader, therefore, before starting current process, it is highly recommended to familiarize yourself with this loader and its functionality [here (OpenCore Guide)](https://dortania.github.io/OpenCore-Install-Guide/). In addition to the basic OpenCore setup, a method for unlocking turbo mode on all processor cores and its undervolting will be described. **Windows** users can also use the OpenCore EFI loader to unlock turbo boost and undervolting, which will be discussed in a separate chapter [For Windows users](#windows).
 
 **System memory setup hint**: this motherboard supports **8 channel** DDR4 RAM (x2 CPUs with 4 channel each), so if you utilize all 8 memory slots, this will give you performance boost **up to 15%** comparing to only 4 utilized slots (2 for each CPU).
 
-<a name="biossetup"></a>
+<a name="biosSetup"></a>
 ## BIOS Setup
 
 If you are not going to flash the BIOS, then you need to make certain changes to the settings of the stock bios. The modified bios from this repository already contains all necessary default settings for the correct launch of macOS.
@@ -66,31 +67,61 @@ To get started, go to the bios, reset all settings to default and save with a re
 * `IntelRCSetup > Advanced Power Management Configuration > CPU C State Control > CPU C6 report` **Disable**
 * `Security > Secure Boot menu > Secure Boot` **Disabled**
 
-<a name="runmac"></a>
+<a name="runMac"></a>
 ## Launching macOS
 
 To run macOS, we need the `./EFI` directory, which must be copied to the root of the USB drive, previously formatted it in **fat32**. Pay attention, that `./EFI` directory contains `production` version of bootloader. If you need `debug` version with `verbose` mode, please use `./EFI` from `EFI.debug.zip` archive attached.
 
-> If you don't have macOS installed earlier on the internal disk, then you need to create an installation flash drive according to [official OpenCore instructions](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/). When you write down the installation flash drive and get to [this point](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#setting-up-opencore-s-efi-environment), copy the `./EFI` directory from this repository to the root of the mounted EFI partition.
+> If you don't have macOS installed earlier on the internal disk, then you need to create an installation flash drive according to [official OpenCore instructions](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/). When you have written the installation flash drive, copy the `./EFI` directory from this repository to the root of the mounted EFI partition.
 
 The EFI directory contains an OpenCore loader pre-configured for this particular system: patched and compiled all the necessary ACPI tables, added the necessary kexts, added support for 24 cores and 48 threads, configured `EFI/OC/config.plist`.
 
 However, before launching, it is necessary to make some mandatory changes to the EFI directory and `EFI/OC/config.plist`. To avoid unexpected errors, open files like `*.plist` in a specialized plist editor! So, what needs to be done:
 
-* Generate and add your own unique serial numbers for the model **iMac17,1**. You will need the [GenSMBIOS utility](https://github.com/corpnewt/GenSMBIOS). The received UUIDs and serial numbers need to be replaced in the file `EFI/OC/config.plist` in the following keys:
+* Generate and add your own unique serial numbers for the model **MacPro7,1**. You will need the [GenSMBIOS utility](https://github.com/corpnewt/GenSMBIOS). The received UUIDs and serial numbers need to be replaced in the file `EFI/OC/config.plist` in the following keys:
 * `PlatformInfo > Generic > MLB` we set the generated value `Board Serial`.
 * `PlatformInfo > Generic > SystemSerialNumber` we set the generated value `Serial`.
 * `PlatformInfo > Generic > SystemUUID` we set the generated value `SmUUID`.
 * `PlatformInfo > Generic > ROM` we set the generated value `Rom`.
 * If your processor **differs** from E5 2678v3, later on after macOS install it will not be superfluous to reset `CPUFriendDataProvider.kext`, because it made for a specific processor. Detailed information [available here](https://dortania.github.io/OpenCore-Post-Install/universal/pm.html#using-cpu-friend).
-* USB ports are configured for a specific motherboard model, the settings are in `EFI/OC/Kexts/USB-Map.kext/Contents/info.plist`. Since macOS limits the number of ports under 15 per 1 controller, I had to leave the front USB 3 port and 2 rear `lower` USB 3 ports only in USB 3 mode without USB 2 support. All other normal USB 2 ports work. Also, the 2 rear `upper` USB 3 operate in two USB 3/USB 2 modes. In addition, I have a discrete PCIe WiFi card with Bluetooth working in native mode. Bluetooth devices in macOS are defined as USB devices and occupy 1 port, but must be marked in a special way for correct operation. In the presented `USB-Map.kext`, such a port is registered relatively to my hardware setup. In your case, the Bluetooth port may be different or the Bluetooth device may not exist at all, so I recommend configuring the `USB-Map.kext/Contents/info.plist` specifically for your setup. Detailed instructions for configuring USB ports [can be found here](https://dortania.github.io/OpenCore-Post-Install/usb/system-preparation.html).
+* USB ports are configured for a specific motherboard model, the settings are in `EFI/OC/Kexts/USBPorts.kext/Contents/info.plist`. Detailed instructions for configuring USB ports [can be found here](https://dortania.github.io/OpenCore-Post-Install/usb/system-preparation.html).
 * If you follow these instructions in chronological order and have not yet flashed the BIOS to unlock turbo boost and undervolting, then make sure that the pre-installed efi module `v3x2_80-50-50_39_vcc1.8.efi` is deactivated. To do this, in `EFI/OC/config.plist` in `UEFI > Drivers`, find the entry with the `path` parameter: `v3x2_80-50-50_39_vcc1.8.efi` and make sure that the value of the `Enabled` field is `false`.
 
 Save the configuration file, restart the computer, go to the BIOS and select boot from the UEFI partition of your flash drive. If everything was done correctly, you will see the OpenCore boot menu, where you can choose an internal drive with macOS already installed or the macOS installer in case of a fresh installation.
 
-<a name="montereyKepler"></a>
-## macOS Monterey and Nvidia Kepler
-Starting from macOS Monterey Apple has removed drivers for Nvidia Kepler from the system. Never the less, there is ways to revert support for this video cards with [Geforce-Kepler-patcher](https://github.com/chris1111/Geforce-Kepler-patcher). Familiarize with it's manual and some limitation, that will occure while using this modification.
+<a name="nvidiaKepler"></a>
+## Nvidia Kepler
+Starting from macOS Monterey Apple has removed drivers for Nvidia Kepler from the system. Never the less, there is ways to revert support for this video cards with [OpenCore Legacy Patcher](https://dortania.github.io/OpenCore-Legacy-Patcher/). Familiarize with it's manual and some limitation, that will occure while using this modification.
+
+<a name="amdNavi"></a>
+## AMD Navi
+For proper operation of AMD Navi, enable 2 kext files `RadeonSensor.kext` and `SMCRadeonGPU.kext` in `EFI/OC/config.plist` under the following keys:
+
+* `Kernel > Add > 20 > Enabled` set to `True`.
+* `Kernel > Add > 21 > Enabled` set to `True`.
+
+Change the boot keys in NVRAM:
+
+* `NVRAM > Add > 7C436110-AB2A-4BBB-A880-FE41995C9F82` comment (rename) the `boot-args` key to `#boot-args.`
+* `NVRAM > Add > 7C436110-AB2A-4BBB-A880-FE41995C9F82` comment (rename) the `#RADEON#boot-args` key to `boot-args`.
+
+Support for other generations of AMD video cards you can try to patch using [OpenCore Legacy Patcher](https://dortania.github.io/OpenCore-Legacy-Patcher/).
+
+<a name="fenviT919"></a>
+## Fenvi T919 WiFi+BT
+I have a `Fenvi T919` PCI card installed with a Broadcom chip, support for which has ceased in the current version of macOS. For it to function, after installing the macOS system, it needs to be patched using the [OpenCore Legacy Patcher](https://dortania.github.io/OpenCore-Legacy-Patcher/). After the patch, without reboot, you need to enable in `EFI/OC/config.plist` kext files `IOSkywalkFamily.kext`, `IO80211FamilyLegacy.kext`, `IO80211FamilyLegacy.kext/Contents/PlugIns/AirPortBrcmNIC.kext`, `AirportBrcmFixup.kext` and `AirportBrcmFixup.kext/Contents/PlugIns/AirPortBrcmNIC_Injector.kext`:
+
+* `Kernel > Add > 13 > Enabled` set to `True`.
+* `Kernel > Add > 14 > Enabled` set to `True`.
+* `Kernel > Add > 15 > Enabled` set to `True`.
+* `Kernel > Add > 16 > Enabled` set to `True`.
+* `Kernel > Add > 17 > Enabled` set to `True`.
+
+Also, it is necessary to block the system driver `com.apple.iokit.IOSkywalkFamily`:
+
+* `Kernel > Block > 0 > Enabled` set to `True`.
+
+After this, you need to reboot the system and the `Fenvi T919` should work along with Apple's wireless functions.
 
 <a name="wbios"></a>
 ## BIOS flashing
@@ -199,21 +230,21 @@ Turn off the computer, wait 10 seconds, launch it and select the UEFI partition 
 
 For Linux users everything is the same as [For Windows users](#windows).
 
-<a name="removeusb"></a>
+<a name="removeUsb"></a>
 ## Removing the USB drive from the system
 
 After the perfect efi driver is found and you are **happy**, we are ready to get rid of a bootable USB flash drive in the USB connector of the computer. To do this, we need to mount the EFI partition of the internal disk and move the EFI directory from the root of our USB drive to its root. If we use macOS, it is advised to mount the EFI partition on the same media where the OS is located. This is also true for any other operating systems. In the case of multi-OS boot, it is enough to place OpenCore on one of the disks with OS and set it first in the queue for loading in the bios.
 
 You can find out how to mount EFI partitions in different operating systems in `Google`.
 
-<a name="impro"></a>
+<a name="imPro"></a>
 ## I'm pro, I don't want to read many letters
 
 OK, then it's simple:
 
 * Flash bios from `./Bios`. **f8dKS.bin** - without the turbo-boost unlock, but with embedded settings for macOS (Linux and Windows also work). **f8dKSM.bin** - the same + microcode `6F 06F2` removed.
 * Format the flash drive in **fat32**, drop the `./EFI` directory into the root of USB stick.
-* Alter `EFI/OC/config.plist` with your generated serial numbers for **iMac17,1**. If macOS is not needed, you can skip it.
+* Alter `EFI/OC/config.plist` with your generated serial numbers for **MacPro7,1**. If macOS is not needed, you can skip it.
 * Put necessary efi module from `./mmof` into `EFI/OC/Drivers` and set corresponding file name in `EFI/OC/config.plist`, in the key `UEFI > Drivers` and enable it.
 * Save, turn off, wait, turn on, boot from the flash drive - win-win.
 
@@ -223,24 +254,14 @@ OK, then it's simple:
 <table width="100%">
   <tr>
     <td align="center" valign="top" colspan="2">
-      XcodeBenchmark (<a href="https://github.com/devMEremenko/XcodeBenchmark#xcode-130-or-above">compare to Mac results</a>)<br>
-      <img src="./benchmarks/xcode.png">
-    </td>
-  </tr>
-  <tr>
-    <td align="center" valign="top" colspan="2">
       Cinebench R23<br>
-      <img src="./benchmarks/cinebench.png">
+      <img src="./benchmarks/cinebenchR23.webp">
     </td>
   </tr>
   <tr>
-    <td align="center" valign="top">
-      Geekbench 4<br>
-      <img src="./benchmarks/geekbench4.png">
-    </td>
     <td align="center" valign="top">
       Geekbench 5<br>
-      <img src="./benchmarks/geekbench5.png">
+      <img src="./benchmarks/geekbench5.webp">
     </td>
   </tr>
 </table>
@@ -255,3 +276,10 @@ Regarding macOS, I got a fully working stable system. PowerManagement works well
 I will be glad to receive feedback in order to improve this configuration. You can find me on telegram:
 * [@tarkhx](https://t.me/tarkhx)
 * [Telegram group on LGA2011 and XEON](https://t.me/Chinese_lga2011_3_x99)
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p align="center">
+  <img src="./about.webp">
+</p>
