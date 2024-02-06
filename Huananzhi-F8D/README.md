@@ -14,6 +14,7 @@
 * [macOS Startup](#runMac)
 * [Nvidia Kepler](#nvidiaKepler)
 * [AMD Navi](#amdNavi)
+* [Fenvi T919 WiFi+BT](#fenviT919)
 * [BIOS Firmware](#wbios)
 * [Unlock and undervolting](#unlock)
 * [Prebuilt bios with settings, unlock and undervolting](#biosUnlockUndervoltedPrebuilt).
