@@ -71,7 +71,7 @@ To get started, go to the bios, reset all settings to default and save with a re
 <a name="runMac"></a>
 ## Launching macOS
 
-To run macOS, we need the `./EFI` directory, which must be copied to the root of the USB drive, previously formatted it in **fat32**. Pay attention, that `./EFI` directory contains `production` version of bootloader. If you need `debug` version with `verbose` mode, please use `./EFI` from `EFI.debug.zip` archive attached.
+To run macOS, we need the `./EFI` directory, which must be copied to the root of the USB drive, previously formatted it in **fat32**. Pay attention, that `./EFI` directory contains `production` version of bootloader.
 
 > If you don't have macOS installed earlier on the internal disk, then you need to create an installation flash drive according to [official OpenCore instructions](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/). When you have written the installation flash drive, copy the `./EFI` directory from this repository to the root of the mounted EFI partition.
 
