@@ -30,6 +30,40 @@ This repository provides information on installing **macOS** on a system with th
 <a name="biosSetup"></a>
 ## BIOS Setup
 
+Bios version: `3802`
+
+Main settings:
+```
+Enhanced Intel SpeedStep Technology [Enabled]
+Turbo Mode [Enabled]
+Hyper-Threading [ALL] [Enabled]
+Limit CPUID Maximum [Disabled]
+Execute Disable Bit [Enabled]
+Intel Virtualization Technology [Enabled]
+Hardware Prefetcher [Enabled]
+Boot Performance Mode [Max Performance]
+CPU C-States [Auto]
+SATA Controller 2 Mode Selection [AHCI]
+Intel VT for Directed I/O (VT-d) [Disabled]
+Intel xHCI Mode [Enabled]
+EHCI Legacy Support [Auto]
+xHCI Hand-off [Enabled]
+EHCI Hand-off [Enabled]
+HD Audio Controller [Enabled]
+Asmedia USB 3.0 Controller [Enabled]
+Bluetooth Controller [Enabled]
+Wi-Fi Controller [Enabled]
+Intel LAN1 Controller [Enabled]
+Intel LAN2 Controller [Enabled]
+Fast Boot [Enabled]
+SATA Support [All Devices]
+USB Support [Full Initialization]
+Boot up NumLock State [Enabled]
+Above 4G Decoding [Enabled]
+Launch CSM [Disabled]
+OS Type [Other OS]
+```
+
 <a name="runMac"></a>
 ## Launching macOS
 
