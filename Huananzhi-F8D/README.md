@@ -13,7 +13,7 @@
 * [BIOS Setup](#biosSetup)
 * [macOS Startup](#runMac)
 * [Nvidia Kepler](#nvidiaKepler)
-* [AMD Navi](#amdNavi)
+* [AMD Radeon](#amdRadeon)
 * [Fenvi T919 WiFi+BT](#fenviT919)
 * [BIOS Firmware](#wbios)
 * [Unlock and undervolting](#unlock)
@@ -94,9 +94,9 @@ Save the configuration file, restart the computer, go to the BIOS and select boo
 ## Nvidia Kepler
 Starting from macOS Monterey Apple has removed drivers for Nvidia Kepler from the system. Never the less, there is ways to revert support for this video cards with [OpenCore Legacy Patcher](https://dortania.github.io/OpenCore-Legacy-Patcher/). Familiarize with it's manual and some limitation, that will occure while using this modification.
 
-<a name="amdNavi"></a>
-## AMD Navi
-For proper operation of AMD Navi, enable 2 kext files `RadeonSensor.kext` and `SMCRadeonGPU.kext` in `EFI/OC/config.plist` under the following keys:
+<a name="amdRadeon"></a>
+## AMD Radeon
+For proper operation of AMD sensors, enable 2 kext files `RadeonSensor.kext` and `SMCRadeonGPU.kext` in `EFI/OC/config.plist` under the following keys:
 
 * `Kernel > Add > 20 > Enabled` set to `True`.
 * `Kernel > Add > 21 > Enabled` set to `True`.
@@ -104,9 +104,9 @@ For proper operation of AMD Navi, enable 2 kext files `RadeonSensor.kext` and `S
 Change the boot keys in NVRAM:
 
 * `NVRAM > Add > 7C436110-AB2A-4BBB-A880-FE41995C9F82` comment (rename) the `boot-args` key to `#boot-args.`
-* `NVRAM > Add > 7C436110-AB2A-4BBB-A880-FE41995C9F82` comment (rename) the `#RADEON#boot-args` key to `boot-args`.
+* `NVRAM > Add > 7C436110-AB2A-4BBB-A880-FE41995C9F82` uncomment (rename) the `#RADEON#boot-args` key to `boot-args`.
 
-Support for other generations of AMD video cards you can try to patch using [OpenCore Legacy Patcher](https://dortania.github.io/OpenCore-Legacy-Patcher/).
+In some cases, the `Navi` generation may require the boot parameter `agdpmod=pikera`. You can read more about NVRAM parameters in the [official Opencore documentation](https://dortania.github.io/OpenCore-Install-Guide/AMD/zen.html#nvram). Support for other generations of AMD video cards you can try to patch using [OpenCore Legacy Patcher](https://dortania.github.io/OpenCore-Legacy-Patcher/). The 500 series of AMD video cards (rx560, rx580...) should work without additional manipulation.
 
 <a name="fenviT919"></a>
 ## Fenvi T919 WiFi+BT
@@ -115,8 +115,8 @@ I have a `Fenvi T919` PCI card installed with a Broadcom chip, support for which
 * `Kernel > Add > 13 > Enabled` set to `True`.
 * `Kernel > Add > 14 > Enabled` set to `True`.
 * `Kernel > Add > 15 > Enabled` set to `True`.
-* `Kernel > Add > 16 > Enabled` set to `True`.
 * `Kernel > Add > 17 > Enabled` set to `True`.
+* `Kernel > Add > 18 > Enabled` set to `True`.
 
 Also, it is necessary to block the system driver `com.apple.iokit.IOSkywalkFamily`:
 

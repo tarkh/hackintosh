@@ -13,7 +13,7 @@
 * [Настройка BIOS](#biosSetup)
 * [Запуск macOS](#runMac)
 * [Nvidia Kepler](#nvidiaKepler)
-* [AMD Navi](#amdNavi)
+* [AMD Radeon](#amdRadeon)
 * [Fenvi T919 WiFi+BT](#fenviT919)
 * [Прошивка BIOS](#wbios)
 * [Анлок и андервольтинг](#unlock)
@@ -94,19 +94,19 @@
 ## Nvidia Kepler
 Начиная с macOS Monterey Apple удалила драйверы для видеокарт Nvidia Kepler из системы. Тем не менее, есть возможность вернуть поддержку данных видеокарт используя [OpenCore Legacy Patcher](https://dortania.github.io/OpenCore-Legacy-Patcher/). Ознакомьтесь с инструкцией по установке и некоторыми ограничениями, которые накладывает данная модификация.
 
-<a name="amdNavi"></a>
-## AMD Navi
-Для правильной работы AMD Navi включите 2 kext-файла `RadeonSensor.kext` и `SMCRadeonGPU.kext` в `EFI/OC/config.plist` в следующих ключах:
+<a name="amdRadeon"></a>
+## AMD Radeon
+Для правильной работы AMD сенсоров включите 2 kext-файла `RadeonSensor.kext` и `SMCRadeonGPU.kext` в `EFI/OC/config.plist` в следующих ключах:
 
 * `Kernel > Add > 20 > Enabled` ставим в `True`.
 * `Kernel > Add > 21 > Enabled` ставим в `True`.
 
-И меняем ключи загрузки в NVRAM:
+И замените ключи загрузки в NVRAM:
 
-* `NVRAM > Add > 7C436110-AB2A-4BBB-A880-FE41995C9F82` комментируем (переименовываем) ключ `boot-args` в `#boot-args`.
-* `NVRAM > Add > 7C436110-AB2A-4BBB-A880-FE41995C9F82` комментируем (переименовываем) ключ `#RADEON#boot-args` в `boot-args`.
+* `NVRAM > Add > 7C436110-AB2A-4BBB-A880-FE41995C9F82` закомментируйте (переименуйте) ключ `boot-args` в `#boot-args`.
+* `NVRAM > Add > 7C436110-AB2A-4BBB-A880-FE41995C9F82` разкомментируйте (переименуйте) ключ `#RADEON#boot-args` в `boot-args`.
 
-Поддержку других поколений видеокарт AMD вы можете попробовать пропатчить с помощью [OpenCore Legacy Patcher](https://dortania.github.io/OpenCore-Legacy-Patcher/).
+В некоторых случаях для поколения `Navi` может понадобится загрузочный параметр `agdpmod=pikera`. Подробнее об `NVRAM` параметрах можете прочитать в [официальной документации Opencore](https://dortania.github.io/OpenCore-Install-Guide/AMD/zen.html#nvram). Поддержку других поколений видеокарт AMD вы можете попробовать пропатчить с помощью [OpenCore Legacy Patcher](https://dortania.github.io/OpenCore-Legacy-Patcher/). 500-ая серия видеокарт от `AMD` (rx560, rx580...) должна работать без дополнительных манипуляций.
 
 <a name="fenviT919"></a>
 ## Fenvi T919 WiFi+BT
@@ -116,8 +116,8 @@
 * `Kernel > Add > 13 > Enabled` ставим в `True`.
 * `Kernel > Add > 14 > Enabled` ставим в `True`.
 * `Kernel > Add > 15 > Enabled` ставим в `True`.
-* `Kernel > Add > 16 > Enabled` ставим в `True`.
 * `Kernel > Add > 17 > Enabled` ставим в `True`.
+* `Kernel > Add > 18 > Enabled` ставим в `True`.
 
 Также необходимо заблокировать системный драйвер `com.apple.iokit.IOSkywalkFamily`:
 
