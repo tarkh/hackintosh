@@ -96,10 +96,10 @@
 
 <a name="amdRadeon"></a>
 ## AMD Radeon
-Для правильной работы AMD сенсоров включите 2 kext-файла `RadeonSensor.kext` и `SMCRadeonGPU.kext` в `EFI/OC/config.plist` в следующих ключах:
+Для правильной работы AMD сенсоров в `EFI/OC/config.plist` в `Kernel > Add` **включите (Enabled: True)** следующие kext-файлы:
 
-* `Kernel > Add > 20 > Enabled` ставим в `True`.
-* `Kernel > Add > 21 > Enabled` ставим в `True`.
+* `RadeonSensor.kext`
+* `SMCRadeonGPU.kext`
 
 И замените ключи загрузки в NVRAM:
 
@@ -111,17 +111,17 @@
 <a name="fenviT919"></a>
 ## Fenvi T919 WiFi+BT
 
-У меня установлена PCI-карта `Fenvi T919` с чипом Broadcom, поддержка которого прекратилась в текущей версии macOS. Для его функционирования, после установки системы macOS её необходимо пропатчить с помощью [OpenCore Legacy Patcher](https://dortania.github.io/OpenCore-Legacy-Patcher/). После патча, не перезагружаясь, нужно включить в `EFI/OC/config.plist` kext-файлы `IOSkywalkFamily.kext`, `IO80211FamilyLegacy.kext`, `IO80211FamilyLegacy.kext/Contents/PlugIns/AirPortBrcmNIC.kext`, `AirportBrcmFixup.kext` и `AirportBrcmFixup.kext/Contents/PlugIns/AirPortBrcmNIC_Injector.kext`:
+У меня установлена PCI-карта `Fenvi T919` с чипом Broadcom, поддержка которого прекратилась в текущей версии macOS. Для его функционирования, после установки системы macOS её необходимо пропатчить с помощью [OpenCore Legacy Patcher](https://dortania.github.io/OpenCore-Legacy-Patcher/). После патча, не перезагружаясь, нужно **включить (Enabled: True)** в `EFI/OC/config.plist` в `Kernel > Add` следующие kext-файлы:
 
-* `Kernel > Add > 13 > Enabled` ставим в `True`.
-* `Kernel > Add > 14 > Enabled` ставим в `True`.
-* `Kernel > Add > 15 > Enabled` ставим в `True`.
-* `Kernel > Add > 17 > Enabled` ставим в `True`.
-* `Kernel > Add > 18 > Enabled` ставим в `True`.
+* `IOSkywalkFamily.kext`
+* `IO80211FamilyLegacy.kext`
+* `IO80211FamilyLegacy.kext/Contents/PlugIns/AirPortBrcmNIC.kext`
+* `AirportBrcmFixup.kext`
+* `AirportBrcmFixup.kext/Contents/PlugIns/AirPortBrcmNIC_Injector.kext`:
 
-Также необходимо заблокировать системный драйвер `com.apple.iokit.IOSkywalkFamily`:
+Также необходимо **включить (Enabled: True)** в `EFI/OC/config.plist` в `Kernel > Block` блокирование системного драйвера:
 
-* `Kernel > Block > 0 > Enabled` ставим в `True`.
+* `com.apple.iokit.IOSkywalkFamily`
 
 После этого нужно перезагрузить систему и `Fenvi T919` должна заработать вместе с беспроводными функциями Apple.
 

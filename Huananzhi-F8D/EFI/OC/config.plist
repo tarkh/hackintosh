@@ -531,7 +531,7 @@
 				<key>BundlePath</key>
 				<string>AppleALC.kext</string>
 				<key>Comment</key>
-				<string>V1.8.8 | Audio patches</string>
+				<string>V1.8.9 | Audio patches</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1029,7 +1029,7 @@
 			<key>PasswordSalt</key>
 			<data></data>
 			<key>ScanPolicy</key>
-			<integer>20908291</integer>
+			<integer>0</integer>
 			<key>SecureBootModel</key>
 			<string>Disabled</string>
 			<key>Vault</key>
@@ -1161,8 +1161,8 @@
 			<dict>
 				<key>#DEBUG#boot-args</key>
 				<string>npci=0x2000  -v debug=0x100 keepsyms=1 alcid=1 amfi=0x80</string>
-				<key>#RADEON#boot-args</key>
-				<string>npci=0x2000 alcid=1 tlbto_us=0 brcmfx-country=#a revpatch=pci,sbvmm revblock=pci</string>
+				<key>#RADEON#boot-args 2</key>
+				<string>npci=0x2000 alcid=1 tlbto_us=0 brcmfx-country=#a revpatch=pci,sbvmm revblock=pci agdpmod=pikera</string>
 				<key>ForceDisplayRotationInEFI</key>
 				<integer>0</integer>
 				<key>SystemAudioVolume</key>

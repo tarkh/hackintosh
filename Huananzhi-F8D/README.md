@@ -96,10 +96,10 @@ Starting from macOS Monterey Apple has removed drivers for Nvidia Kepler from th
 
 <a name="amdRadeon"></a>
 ## AMD Radeon
-For proper operation of AMD sensors, enable 2 kext files `RadeonSensor.kext` and `SMCRadeonGPU.kext` in `EFI/OC/config.plist` under the following keys:
+For proper operation of AMD sensors, **enable (Enabled: True)** kext files in `EFI/OC/config.plist` under `Kernel > Add` path:
 
-* `Kernel > Add > 20 > Enabled` set to `True`.
-* `Kernel > Add > 21 > Enabled` set to `True`.
+* `RadeonSensor.kext`
+* `SMCRadeonGPU.kext`
 
 Change the boot keys in NVRAM:
 
@@ -110,17 +110,17 @@ In some cases, the `Navi` generation may require the boot parameter `agdpmod=pik
 
 <a name="fenviT919"></a>
 ## Fenvi T919 WiFi+BT
-I have a `Fenvi T919` PCI card installed with a Broadcom chip, support for which has ceased in the current version of macOS. For it to function, after installing the macOS system, it needs to be patched using the [OpenCore Legacy Patcher](https://dortania.github.io/OpenCore-Legacy-Patcher/). After the patch, without reboot, you need to enable in `EFI/OC/config.plist` kext files `IOSkywalkFamily.kext`, `IO80211FamilyLegacy.kext`, `IO80211FamilyLegacy.kext/Contents/PlugIns/AirPortBrcmNIC.kext`, `AirportBrcmFixup.kext` and `AirportBrcmFixup.kext/Contents/PlugIns/AirPortBrcmNIC_Injector.kext`:
+I have a `Fenvi T919` PCI card installed with a Broadcom chip, support for which has ceased in the current version of macOS. For it to function, after installing the macOS system, it needs to be patched using the [OpenCore Legacy Patcher](https://dortania.github.io/OpenCore-Legacy-Patcher/). After the patch, without reboot, you need to **enable (Enabled: True)** kext files in `EFI/OC/config.plist` under `Kernel > Add` path: 
 
-* `Kernel > Add > 13 > Enabled` set to `True`.
-* `Kernel > Add > 14 > Enabled` set to `True`.
-* `Kernel > Add > 15 > Enabled` set to `True`.
-* `Kernel > Add > 17 > Enabled` set to `True`.
-* `Kernel > Add > 18 > Enabled` set to `True`.
+* `IOSkywalkFamily.kext`
+* `IO80211FamilyLegacy.kext`
+* `IO80211FamilyLegacy.kext/Contents/PlugIns/AirPortBrcmNIC.kext`
+* `AirportBrcmFixup.kext`
+* `AirportBrcmFixup.kext/Contents/PlugIns/AirPortBrcmNIC_Injector.kext`
 
-Also, it is necessary to block the system driver `com.apple.iokit.IOSkywalkFamily`:
+**Enable (Enabled: True)** the system driver blocking in `EFI/OC/config.plist` under `Kernel > Block` path:
 
-* `Kernel > Block > 0 > Enabled` set to `True`.
+* `com.apple.iokit.IOSkywalkFamily`
 
 After this, you need to reboot the system and the `Fenvi T919` should work along with Apple's wireless functions.
 
