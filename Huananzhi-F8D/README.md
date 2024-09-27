@@ -2,11 +2,11 @@
 **([русская версия](https://github.com/tarkh/hackintosh/blob/main/Huananzhi-F8D/README-rus.md))**
 
 ## <img src="https://via.placeholder.com/12/f03c15/f03c15.png"> `Version for macOS 14 (Sonoma)`
+*You are in the macOS 14 (Sonoma) branch. The latest build versions are available only in the main branch of this repository.*
+
 <p align="center">
   <img src="./benchmarks/aboutxl.webp">
 </p>
-
-*This version should work with macOS operating systems starting from **10.14 (Mojave)** and ending with **macOS 14 (Sonoma)**, however, if you have problems running **macOS < version 14**, you can try an earlier build from the corresponding branch `macOS 10.14 (Mojave)`, `macOS 11 (Big Sur)` or `macOS 12 (Monterey)` in this repository.*
 
 ##
 * [Introductory Information](#intro)
