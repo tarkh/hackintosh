@@ -2,11 +2,11 @@
 **([english version](https://github.com/tarkh/hackintosh/tree/main/Huananzhi-F8D))**
 
 ## <img src="https://via.placeholder.com/12/f03c15/f03c15.png"> `Версия для macOS 14 (Sonoma)`
+*Вы находитесь в бранче macOS 14 (Sonoma). Последние версии сборки доступны только в основном бранче данного репозитория.*
+
 <p align="center">
   <img src="./benchmarks/aboutxl.webp">
 </p>
-
-*Данная версия должна работать с операционными системами macOS начиная с **10.14 (Mojave)** и заканчивая **macOS 14 (Sonoma)**, тем не менее если у вас возникли проблемы с запуском **macOS < 14 версии**, то можете попробовать более ранние сборки загрузчика из соответствующих бранчей `macOS 10.14 (Mojave)`, `macOS 11 (Big Sur)` и `macOS 12 (Monterey)` в данном репозитории.*
 
 ##
 * [Вводная информация](#intro)
