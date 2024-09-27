@@ -3,7 +3,7 @@
 
 ## <img src="https://via.placeholder.com/12/f03c15/f03c15.png"> `Version for macOS 15 (Sequoia)`
 <p align="center">
-  <img src="./aboutxl.webp">
+  <img src="./aboutxl.webp?v=15">
 </p>
 
 *This version should work with macOS operating systems starting from **10.14 (Mojave)** and ending with **macOS 15 (Sequoia)**, however, if you have problems running **macOS < version 15**, you can try an earlier build from the corresponding branch `macOS 10.14 (Mojave)`, `macOS 11 (Big Sur)`, `macOS 12 (Monterey)` or `macOS 14 (Sonoma)` in this repository.*
@@ -126,12 +126,12 @@ After this, you need to reboot, reset NVRAM and the `Fenvi T919` should work alo
 <a name="wbios"></a>
 ## BIOS flashing
 
-This method uses BIOS [HNX99F8D_220105_kot_v003](https://github.com/Koshak1013/HuananzhiX99_BIOS_mods/tree/master/Huananzhi%20X99-F8D/2020-06-24) from the wonderful repository of [Koshak1013](https://github.com/Koshak1013). This bios contains a number of fixes, microcode updates, BCLK 100.00MHz, access to memory timings settings and unlocked ME-regions so that you can later flash bioses without a programmer. **The guys are doing a great job, and the repository is constantly being updated with new bioses for various motherboards from China, so do not hesitate to go to their repository and make a donation!**
+This method uses BIOS [HNX99F8D_220105_kot](https://github.com/Koshak1013/HuananzhiX99_BIOS_mods/tree/master/Huananzhi%20X99-F8D/2022-01-05) from the wonderful repository of [Koshak1013](https://github.com/Koshak1013). This bios contains a number of fixes, microcode updates, BCLK 100.00MHz, access to memory timings settings and unlocked ME-regions so that you can later flash bioses without a programmer.
 
 In the directory `./Bios` you'll find bios file `F8D_220105_KSM.bin`:
 
 * **F8D_220105_KSM.bin**, where:
-* **K** is the original bios from [Koshak1013](https://github.com/Koshak1013 ) (`HNX99F8D_200624_kot_v002`).
+* **K** is the original bios from [Koshak1013](https://github.com/Koshak1013 ) (`HNX99F8D_200624_kot`).
 * **S** - all bios settings alredy builted in for correct operation in macOS (from [BIOS Setup](#biossetup)).
 * **M** - the microcode `6F 06F2` has been removed, turbo boost on all cores unlocked, undervolting available from bios menu.
 
@@ -159,7 +159,7 @@ Despite the fact that the stock bios has a lock on the ME-regions, it is still p
 
 #### Post-flashing
 
-After flashing the bios from this repository, there is no need to pull the battery out of the motherboard and reset the settings to default - everything is already configured for macOS to work correctly. When bios flashing is completed, turn off the computer, wait 10 seconds and turn it back on. You can boot into macOS.
+After flashing the bios from this repository, there is no need to reset the bios settings in the motherboard to defaults - everything is already configured for macOS to work correctly. When bios flashing is completed, turn off the computer, wait 10 seconds and turn it back on. You can boot into macOS.
 
 <a name="undervolting"></a>
 ## Undervolting
@@ -190,7 +190,7 @@ You can find out how to mount EFI partitions in different operating systems in `
 
 OK, then it's simple:
 
-* Flash bios from `./Bios`. **F8D_220105_KSM.bin** - contains all bios settings for macOS + microcode `6F 06F2` removed + turbo unlocked + overclocking available from bios menu.
+* Flash bios **F8D_220105_KSM.bin**. It contains all bios settings for macOS + microcode `6F 06F2` removed + turbo unlocked + overclocking available from bios menu.
 * Format the flash drive in **fat32**, drop the `./EFI` directory into the root of USB stick.
 * Alter `EFI/OC/config.plist` with your generated serial numbers for **MacPro7,1**.
 * Save, turn off, wait, turn on, boot from the flash drive — win-win.
@@ -202,13 +202,13 @@ OK, then it's simple:
   <tr>
     <td align="center" valign="top" colspan="2">
       Cinebench R23<br>
-      <img src="./benchmarks/cinebenchR23.webp">
+      <img src="./benchmarks/cinebenchR23.webp?v=15">
     </td>
   </tr>
   <tr>
     <td align="center" valign="top">
       Geekbench 5<br>
-      <img src="./benchmarks/geekbench5.webp">
+      <img src="./benchmarks/geekbench5.webp?v=15">
     </td>
   </tr>
 </table>
@@ -216,7 +216,7 @@ OK, then it's simple:
 <a name="end"></a>
 ## Epilogue
 
-Regarding macOS, I achieved a fully stable and functional system. Power management works well, and even without unlocking turbo boost, the system delivers good benchmark results. On average, it’s about 15-20% less than with turbo unlocked.
+Regarding macOS, I achieved a fully stable and functional system. Power management works well, and even without unlocking turbo boost, the system delivers good results. On average, it’s about 15-20% less than with turbo unlocked.
 
 >**Sleep mode doesn’t work, but this is a limitation of the macOS kernel itself, as there are no modern Apple computers with dual-socket setups. Perhaps someone will solve this problem someday. If you discover a solution, please let me know.**
 
@@ -228,5 +228,5 @@ I would appreciate any feedback to improve this configuration. You can find me o
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p align="center">
-  <img src="./about.webp">
+  <img src="./about.webp?v=15">
 </p>
