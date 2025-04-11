@@ -1,7 +1,7 @@
 # Asus x99 Deluxe
 **([русская версия](https://github.com/tarkh/hackintosh/blob/main/Asus-x99-Deluxe/README-rus.md))**
 
-## <img src="https://via.placeholder.com/12/f03c15/f03c15.png"> `Version for macOS 14 (Sonoma)`
+## <div style="margin-top:1px;margin-right:8px;width:16px;height:26px;border-radius:4px;background-color:#ee370d;float:left;"></div> `Version for macOS 14 (Sonoma)`
 <p align="center">
   <img src="./benchmarks/aboutxl.webp">
 </p>

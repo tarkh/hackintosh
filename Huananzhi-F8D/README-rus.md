@@ -1,7 +1,7 @@
 # Huananzhi F8D
 **([English version](https://github.com/tarkh/hackintosh/blob/main/Huananzhi-F8D/README.md))**
 
-## <img src="https://via.placeholder.com/12/f03c15/f03c15.png"> `Версия для macOS 15 (Sequoia)`
+## <div style="margin-top:1px;margin-right:8px;width:16px;height:26px;border-radius:4px;background-color:#ee370d;float:left;"></div> `Версия для macOS 15 (Sequoia)`
 <p align="center">
   <img src="./aboutxl.webp?v=15">
 </p>
@@ -87,7 +87,9 @@
 * `PlatformInfo > Generic > ROM` установите сгенерированное значение `Rom`.
 * Порты USB настроены для конкретной модели материнской платы, настройки находятся в `EFI/OC/Kexts/USBPorts.kext/Contents/info.plist`. Подробные инструкции по настройке USB портов [можно найти здесь](https://dortania.github.io/OpenCore-Post-Install/usb/system-preparation.html).
 
-Сохраните файл конфигурации, перезагрузите компьютер, зайдите в BIOS и выберите загрузку с UEFI-раздела вашей флешки. Если все было сделано правильно, вы увидите меню загрузки OpenCore, где можно выбрать внутренний диск с уже установленной macOS или установщик macOS в случае чистой установки.
+Сохраните файл конфигурации, перезагрузите компьютер, зайдите в BIOS и выберите загрузку с UEFI-раздела вашей флешки. Если все было сделано правильно, вы увидите процесс загрузки установленной macOS или установщика macOS в случае чистой установки.
+
+> Чтобы войти в загрузочное меню OpenCore удерживайте или быстро нажимайте клавишу **ALT** (**Option**) при запуске системы сразу после звукового сигнала материнской платы
 
 <a name="nvidiaKepler"></a>
 ## Nvidia Kepler

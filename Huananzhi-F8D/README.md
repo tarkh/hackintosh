@@ -1,7 +1,7 @@
 # Huananzhi F8D
 **([русская версия](https://github.com/tarkh/hackintosh/blob/main/Huananzhi-F8D/README-rus.md))**
 
-## <img src="https://via.placeholder.com/12/f03c15/f03c15.png"> `Version for macOS 15 (Sequoia)`
+## <div style="margin-top:1px;margin-right:8px;width:16px;height:26px;border-radius:4px;background-color:#ee370d;float:left;"></div> `Version for macOS 15 (Sequoia)`
 <p align="center">
   <img src="./aboutxl.webp?v=15">
 </p>
@@ -87,7 +87,9 @@ However, before launching, it is necessary to make some mandatory changes to the
 * `PlatformInfo > Generic > ROM` we set the generated value `Rom`.
 * USB ports are configured for a specific motherboard model, the settings are in `EFI/OC/Kexts/USBPorts.kext/Contents/info.plist`. Detailed instructions for configuring USB ports [can be found here](https://dortania.github.io/OpenCore-Post-Install/usb/system-preparation.html).
 
-Save the configuration file, restart the computer, go to the BIOS and select boot from the UEFI partition of your flash drive. If everything was done correctly, you will see the OpenCore boot menu, where you can choose an internal drive with macOS already installed or the macOS installer in case of a fresh installation.
+Save the configuration file, restart the computer, go to the BIOS and select boot from the UEFI partition of your flash drive. If everything was done correctly, you will see loading process of macOS that is already installed or the macOS installer in case of a fresh installation.
+  
+> To access OpenCore boot menu hold or quickly press **ALT** (**Option**) key on system boot right after motherboard sound beeps 
 
 <a name="nvidiaKepler"></a>
 ## Nvidia Kepler
